@@ -13,7 +13,7 @@ const Home = ({navigation}) => {
   const [refreshing, setRefreshing] = useState(false);
 
   const getData = () => {
-      axios.get('https://enthouse.azurewebsites.net')
+      axios.get('')
       .then(response => {
           setMotorStatus(response.data.engine.Motor_ON)
           setWaterLevel(response.data.water.Water_Level)
