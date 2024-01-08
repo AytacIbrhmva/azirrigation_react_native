@@ -253,6 +253,20 @@ import Svg, { Path, Circle, Rect , G ,Defs, ClipPath } from "react-native-svg"
  }
 
 
+ const EnergyIcon = () => {
+    return (
+        <Svg fill="#5AC3E8" width="36px" height="36px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <G id="SVGRepo_bgCarrier" stroke-width="0"></G>
+            <G id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></G>
+            <G id="SVGRepo_iconCarrier">
+                <Path d="M13,9h6L8,22l3-10H5L10,2h7Z">
+                </Path>
+            </G>
+        </Svg>
+    )
+ }
+
+
 export {
     EngineIcon, 
     EngineIconSmall,
@@ -272,5 +286,6 @@ export {
     SettingsBoldIcon,
     DropIcon,
     TickIcon,
-    ArrowRightIcon
+    ArrowRightIcon,
+    EnergyIcon
 };

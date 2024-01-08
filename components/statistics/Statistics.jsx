@@ -1,14 +1,15 @@
-import React from 'react'
-import {View, Pressable, Text} from 'react-native'
+import React, { useState } from 'react'
+import {View, Pressable, Text, ScrollView} from 'react-native'
 import LinearGradient from 'react-native-linear-gradient';
 import Header from '../../layout/header/Header';
 import styles from './statistics.style';
 import FooterNav from '../../layout/footer/FooterNav';
-import { DropIcon } from '../../assets/icons/icons';
+import { DropIcon, EnergyIcon} from '../../assets/icons/icons';
 import Chart from './Chart';
 
 
 const Statistics = ({navigation}) => {
+  const [activeDate, setActiveDate] = useState('Son 7 gün')
   return (
 
     <View style={{flex: 1}}>
@@ -21,35 +22,47 @@ const Statistics = ({navigation}) => {
       >
         <View style={styles.container}>
           <Text style={styles.title}>Statistikalar</Text>
+          <ScrollView>
+            <View style={styles.tabContainer}>
+              <Pressable onPress={() => setActiveDate('Son 7 gün')}>
+                <Text style={styles.tab(activeDate === 'Son 7 gün')}>Son 7 gün</Text>
+              </Pressable>
 
-          <View style={styles.tabContainer}>
-            <Pressable>
-              <Text style={styles.tab(true)}>Son 7 gün</Text>
-            </Pressable>
+              <Pressable onPress={() => setActiveDate('Son 30 gün')}>
+                <Text style={styles.tab(activeDate === 'Son 30 gün')}>Son 30 gün</Text>
+              </Pressable>
 
-            <Pressable>
-              <Text style={styles.tab(false)}>Son 30 gün</Text>
-            </Pressable>
-
-            <Pressable>
-              <Text style={styles.tab(false)}>Tarix seç</Text>
-            </Pressable>
-          </View>
-
-          <Text style={styles.dateText}>03 mart - 10 mart 2023</Text>
-
-          <Chart />
-
-          <View style={styles.card}>
-            <View style={styles.cardLeft}>
-              <DropIcon />
+              <Pressable onPress={() => setActiveDate('choose date')}>
+                <Text style={styles.tab(activeDate === 'choose date')}>Tarix seç</Text>
+              </Pressable>
             </View>
 
-            <View style={styles.cardRight}>
-              <Text style={styles.cardTitle}>Ümumi su sərfiyyatı</Text>
-              <Text style={styles.cardDesc}>30523 L</Text>
+            <Text style={styles.dateText}>03 mart - 10 mart 2023</Text>
+
+            <Chart />
+
+            <View style={styles.card}>
+              <View style={styles.cardLeft}>
+                <DropIcon />
+              </View>
+
+              <View style={styles.cardRight}>
+                <Text style={styles.cardTitle}>Ümumi su sərfiyyatı</Text>
+                <Text style={styles.cardDesc}>8000 L</Text>
+              </View>
             </View>
-          </View>
+
+            <View style={styles.card}>
+              <View style={styles.cardLeft}>
+                <EnergyIcon />
+              </View>
+
+              <View style={styles.cardRight}>
+                <Text style={styles.cardTitle}>Ümumi enerji sərfiyyatı</Text>
+                <Text style={styles.cardDesc}>10 AZN</Text>
+              </View>
+            </View>
+          </ScrollView>
         </View> 
 
         {/* <FooterNav  navigation={navigation}/> */}

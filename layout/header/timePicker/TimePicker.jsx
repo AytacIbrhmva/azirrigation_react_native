@@ -38,7 +38,8 @@ const TimePicker = ({setTimer, showTime, setShowTime, workingStatus}) => {
     }
 
     const postData = (data) => {
-        axios.post('',data)
+        console.log('data post:' + data);
+        axios.post('https://enthouse.azurewebsites.net/post',data)
         .then(response => {
             console.log('success');
             // setEngine({

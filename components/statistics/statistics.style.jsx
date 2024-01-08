@@ -4,9 +4,10 @@ import { SFProText } from "../../assets/fontName/font";
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        paddingTop: 60,
+        paddingBottom: 55,
         paddingLeft: 15,
         paddingRight: 15,
-        paddingTop: 60,
     },
     title: {
         color: '#fff',

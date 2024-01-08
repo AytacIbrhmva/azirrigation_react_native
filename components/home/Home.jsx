@@ -13,7 +13,7 @@ const Home = ({navigation}) => {
   const [refreshing, setRefreshing] = useState(false);
 
   const getData = () => {
-      axios.get('')
+      axios.get('https://enthouse.azurewebsites.net')
       .then(response => {
           setMotorStatus(response.data.engine.Motor_ON)
           setWaterLevel(response.data.water.Water_Level)
@@ -33,7 +33,7 @@ const Home = ({navigation}) => {
   }, []);
 
   return (
-    <View style={{flex: 1, backgroundColor: 'red'}}>
+    <View style={{flex: 1}}>
       <LinearGradient
         colors={['#219BD3', '#0C588A']}
         locations={[0, 1]}

@@ -45,7 +45,7 @@ const Settings = ({navigation}) => {
               <View style={styles.card}>
                 <View style={styles.cardText}>
                   <Text style={styles.cardTitle}>Su sərfiyyatı:</Text>
-                  <Text style={styles.cardTitleBold}>125 l</Text>
+                  <Text style={styles.cardTitleBold}>8000 L</Text>
                 </View>
 
                 <Pressable>
@@ -76,11 +76,35 @@ const Settings = ({navigation}) => {
                 </View>
 
                 <View style={styles.card}>
-                <Text style={styles.cardTitle}>Haqqımızda</Text>
+                  <Text style={styles.cardTitle}>Haqqımızda</Text>
 
-                <Pressable>
-                  <ArrowRightIcon />
-                </Pressable>
+                  <Pressable>
+                    <ArrowRightIcon />
+                  </Pressable>
+                </View>
+
+                <View style={styles.card}>
+                  <Text style={styles.cardTitle}>Region</Text>
+
+                  <Pressable>
+                    <ArrowRightIcon />
+                  </Pressable>
+                </View>
+
+                <View style={styles.card}>
+                  <Text style={styles.cardTitle}>Dil</Text>
+
+                  <Pressable>
+                    <ArrowRightIcon />
+                  </Pressable>
+                </View>
+
+                <View style={styles.card}>
+                  <Text style={styles.cardTitle}>Məzənnə</Text>
+
+                  <Pressable>
+                    <ArrowRightIcon />
+                  </Pressable>
                 </View>
               </View>
             </View>
